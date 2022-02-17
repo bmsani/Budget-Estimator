@@ -36,7 +36,7 @@ document.getElementById("saving").addEventListener("click", function () {
   const totalIncome = inputIdCaller("total-income");
   const savingRateNumber = inputIdCaller("saving-percentage");
 
-  if (savingRateNumber > 100 != savingRateNumber < 1) {
+  if (savingRateNumber > 100 != savingRateNumber <= 1) {
     alert("please give a number between 1 to 100");
   }
 
