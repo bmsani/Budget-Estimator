@@ -1,0 +1,13 @@
+
+.inputs{
+    text-align: right;
+    padding-right: 25%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.input-field{
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px 0;
+    background-color: gray;
+}
