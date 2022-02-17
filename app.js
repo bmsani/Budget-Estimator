@@ -1,6 +1,6 @@
 function inputIdCaller(idName) {
   const inputValue = document.getElementById(idName);
-  const valueToNumber = parseInt(inputValue.value);
+  const valueToNumber = parseFloat(inputValue.value);
   return valueToNumber;
 }
 
@@ -9,15 +9,22 @@ function innerTextChanger(idName, changeData) {
   textFeild.innerText = changeData;
 }
 
+
+
+// const savingRateNumber = inputIdCaller("saving-parcentage");
+// function savingParcent(){
+//   if
+// }
+
+
 document.getElementById("calculate").addEventListener("click", function () {
   const totalIncome = inputIdCaller("total-income");
-  const foodCostNumber = inputIdCaller("food-cost");
-  const rentCostNumber = inputIdCaller("rent-cost");
-  const clothCostNumber = inputIdCaller("cloth-cost");
-
+const foodCostNumber = inputIdCaller("food-cost");
+const rentCostNumber = inputIdCaller("rent-cost");
+const clothCostNumber = inputIdCaller("cloth-cost");
   const totalCost = foodCostNumber + rentCostNumber + clothCostNumber;
-
   const balance = totalIncome - totalCost;
+  
 
   if (
     totalIncome > 0 &&
@@ -28,24 +35,30 @@ document.getElementById("calculate").addEventListener("click", function () {
     innerTextChanger("total-expenses", totalCost);
     innerTextChanger("balance", balance);
   }else{
-    
+    alert('please select a positive number')
   }
 });
 
 document.getElementById("saving").addEventListener("click", function () {
-  const savingRate = document.getElementById("saving-percentage");
-  const savingRateNumber = parseInt(savingRate.value);
+  const totalIncome = inputIdCaller("total-income");
+  const savingRateNumber = inputIdCaller("saving-parcentage");
 
-  const balanceFeild = document.getElementById("balance");
-  const balanceFeildNumber = parseInt(balanceFeild.innerText);
+  if(savingRateNumber > 100 && savingRateNumber <= 1){
+    alert('please select a number between 1 to 100')
+  }
+  
+  const totalSaving = (totalIncome * savingRateNumber) / 100;
 
-  const totalSaving = (balanceFeildNumber * savingRateNumber) / 100;
+  const currentBalance = document.getElementById('balance');
+  const currentBalanceNumber = parseFloat(currentBalance.innerText); 
 
-  const savingAmount = document.getElementById("saving-amount");
-  savingAmount.innerText = totalSaving;
+  if(totalSaving < currentBalanceNumber ){
+    innerTextChanger("saving-amount", totalSaving)
+    innerTextChanger("remaining-balance",totalIncome - totalSaving)
+  }else{
+    alert('your current balance is not enough')
+  }
 
-  const remainingBalance = document.getElementById("remaining-balance");
-  remainingBalance.innerText = balanceFeildNumber - totalSaving;
 
-  console.log(remainingBalance.innerText);
+
 });
