@@ -16,3 +16,10 @@ body{
   padding: 5px 5px;
   background-color: #dcdcdc;
 }
+.savings{
+  display: flex;
+  justify-content: center;
+}
+.savings input{
+  width: 30%;
+}

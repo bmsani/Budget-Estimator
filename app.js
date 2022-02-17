@@ -9,22 +9,14 @@ function innerTextChanger(idName, changeData) {
   textFeild.innerText = changeData;
 }
 
-
-
-// const savingRateNumber = inputIdCaller("saving-parcentage");
-// function savingParcent(){
-//   if
-// }
-
-
+// calculate total expenses and remaing balance
 document.getElementById("calculate").addEventListener("click", function () {
   const totalIncome = inputIdCaller("total-income");
-const foodCostNumber = inputIdCaller("food-cost");
-const rentCostNumber = inputIdCaller("rent-cost");
-const clothCostNumber = inputIdCaller("cloth-cost");
+  const foodCostNumber = inputIdCaller("food-cost");
+  const rentCostNumber = inputIdCaller("rent-cost");
+  const clothCostNumber = inputIdCaller("cloth-cost");
   const totalCost = foodCostNumber + rentCostNumber + clothCostNumber;
   const balance = totalIncome - totalCost;
-  
 
   if (
     totalIncome > 0 &&
@@ -34,31 +26,29 @@ const clothCostNumber = inputIdCaller("cloth-cost");
   ) {
     innerTextChanger("total-expenses", totalCost);
     innerTextChanger("balance", balance);
-  }else{
-    alert('please give a positive number')
+  } else {
+    alert("please give a positive number");
   }
 });
 
+// calculate saving amount and remaing balance
 document.getElementById("saving").addEventListener("click", function () {
   const totalIncome = inputIdCaller("total-income");
   const savingRateNumber = inputIdCaller("saving-percentage");
 
-  if(savingRateNumber > 100 != savingRateNumber <= 1){
-    alert('please give a number between 1 to 100')
+  if (savingRateNumber > 100 != savingRateNumber <= 1) {
+    alert("please give a number between 1 to 100");
   }
-  
+
   const totalSaving = (totalIncome * savingRateNumber) / 100;
 
-  const currentBalance = document.getElementById('balance');
-  const currentBalanceNumber = parseFloat(currentBalance.innerText); 
+  const currentBalance = document.getElementById("balance");
+  const currentBalanceNumber = parseFloat(currentBalance.innerText);
 
-  if(totalSaving < currentBalanceNumber ){
-    innerTextChanger("saving-amount", totalSaving)
-    innerTextChanger("remaining-balance",totalIncome - totalSaving)
-  }else{
-    alert('your current balance is not enough')
+  if (totalSaving <= currentBalanceNumber) {
+    innerTextChanger("saving-amount", totalSaving);
+    innerTextChanger("remaining-balance", currentBalanceNumber - totalSaving);
+  } else {
+    alert("your current balance is not enough");
   }
-
-
-
 });

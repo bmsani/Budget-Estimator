@@ -17,17 +17,13 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="text-center py-3">Budget Estimator</h1>
-      <div class="row gx-5">
-        <div class="col-md-7">
-          <img
-            class="img-fluid"
-            src="images/4-edited.jpg"
-            alt=""
-          />
+      <h1 class="text-center pt-3">Budget Estimator</h1>
+      <div class="row">
+        <div class="col-lg-7 mt-3">
+          <img class="img-fluid" src="images/4-edited.jpg" alt="" />
         </div>
         <!-- <div class="col-md-1"></div> -->
-        <div class="col-md-5 bg-light">
+        <div class="col-lg-5 mt-3 bg-light">
           <h5 class="text-center pt-2">Income</h5>
           <div action="">
             <div class="inputs">
@@ -49,27 +45,32 @@
               <label for="">Clothes :</label>
               <input id="cloth-cost" class="input-field" type="number" />
             </div>
-            <button id="calculate" class="btn btn-info text-white m-auto d-block btn-lg px-5">
+            <button
+              id="calculate"
+              class="btn btn-info text-white m-auto d-block btn-lg px-5"
+            >
               Calculate
             </button>
             <h5 class="text-center pt-3">
-              Total Expenses: <span id="total-expenses">5000</span>
+              Total Expenses: <span id="total-expenses">0.00</span>
             </h5>
             <h5 class="text-center pt-3">
-              Balance: <span id="balance">5000</span>
+              Balance: <span id="balance">0.00</span>
             </h5>
             <div class="savings">
               <label for="">Save:</label>
               <input id="saving-percentage" class="input-field" type="number" />
               <span class="px-3"> % </span>
-              <button id="saving" class="btn btn-info text-white px-5">save</button>
-              <h5 class="text-center pt-3">
-                Savinng amount: <span id="saving-amount">5000</span>
-              </h5>
-              <h5 class="text-center pt-3">
-                Remaining balance: <span id="remaining-balance">5000</span>
-              </h5>
+              <button id="saving" class="btn btn-info text-white px-5">
+                save
+              </button>
             </div>
+            <h5 class="text-center pt-3">
+              Savinng amount: <span id="saving-amount">0.00</span>
+            </h5>
+            <h5 class="text-center pt-3">
+              Remaining balance: <span id="remaining-balance">0.00</span>
+            </h5>
           </div>
         </div>
       </div>
