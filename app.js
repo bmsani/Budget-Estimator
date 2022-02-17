@@ -35,16 +35,16 @@ const clothCostNumber = inputIdCaller("cloth-cost");
     innerTextChanger("total-expenses", totalCost);
     innerTextChanger("balance", balance);
   }else{
-    alert('please select a positive number')
+    alert('please give a positive number')
   }
 });
 
 document.getElementById("saving").addEventListener("click", function () {
   const totalIncome = inputIdCaller("total-income");
-  const savingRateNumber = inputIdCaller("saving-parcentage");
+  const savingRateNumber = inputIdCaller("saving-percentage");
 
-  if(savingRateNumber > 100 && savingRateNumber <= 1){
-    alert('please select a number between 1 to 100')
+  if(savingRateNumber > 100 != savingRateNumber <= 1){
+    alert('please give a number between 1 to 100')
   }
   
   const totalSaving = (totalIncome * savingRateNumber) / 100;
