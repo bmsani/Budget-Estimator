@@ -1,13 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-.inputs{
-    text-align: right;
-    padding-right: 25%;
-    margin-bottom: 20px;
-    margin-top: 10px;
+
+body{
+    font-family: 'Poppins', sans-serif;
 }
-.input-field{
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 5px 0;
-    background-color: gray;
+.inputs {
+  text-align: right;
+  padding-right: 25%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.input-field {
+  border: none;
+  border-radius: 3px;
+  padding: 5px 5px;
+  background-color: #dcdcdc;
 }
