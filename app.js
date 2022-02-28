@@ -17,8 +17,10 @@ document.getElementById("calculate").addEventListener("click", function () {
   const clothCostNumber = inputIdCaller("cloth-cost");
   const totalCost = foodCostNumber + rentCostNumber + clothCostNumber;
   const balance = totalIncome - totalCost;
-
-  if (
+  if(totalIncome < totalCost){
+    alert('Your expense is exeeding your income.')
+  }
+  else if (
     totalIncome > 0 &&
     foodCostNumber > 0 &&
     rentCostNumber > 0 &&
@@ -36,7 +38,7 @@ document.getElementById("saving").addEventListener("click", function () {
   const totalIncome = inputIdCaller("total-income");
   const savingRateNumber = inputIdCaller("saving-percentage");
 
-  if (savingRateNumber > 100 != savingRateNumber <= 1) {
+  if (savingRateNumber > 100 || savingRateNumber < 1) {
     alert("please give a number between 1 to 100");
   }
 
